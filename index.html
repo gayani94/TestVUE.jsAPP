@@ -1,0 +1,56 @@
+<html>
+<head>
+ <title>Document</title>
+  <script type = "text/javascript" src = "js/vue.js"></script>
+</head>
+   <body>
+      <div id = "app">
+      <!-- <p v-if="userAge > allowedAge">
+         You are good to go.
+      </p>
+      <p v-else-if="userName===ABC">
+         You are good to go.
+      </p>
+      <p v-else>
+         You are not allowed
+      </p>
+         
+      </p> -->
+
+      <!-- <p v-if="checkUser()">
+         show it
+      </p>
+      <p v-else>
+         You are not allowed
+      </p>
+       -->
+
+       <p v-show="user === 'DEF'">
+          Show it
+       </p>
+       <p v-show="user !== 'DEF'">
+         not show it
+          </div>
+   </body>
+      <script>
+
+
+        new Vue({
+            el:"#app",
+            data:{
+               user:"DEF",
+               userAge:15,
+               allowedAge:18
+               },
+
+            method:{
+               checkUser(){
+                  return this.user ==="ABC" ? true:false
+               }
+            }
+                 
+         })
+      </script>
+
+
+</html>
