@@ -1,56 +1,53 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
- <title>Document</title>
-  <script type = "text/javascript" src = "js/vue.js"></script>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link href="https://fonts.googleapis.com/css?family=Anton|Roboto:300,400,500" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+   <script src="js/vue.js"></script>
+   <title>Who pays the bill</title>
 </head>
-   <body>
-      <div id = "app">
-      <!-- <p v-if="userAge > allowedAge">
-         You are good to go.
-      </p>
-      <p v-else-if="userName===ABC">
-         You are good to go.
-      </p>
-      <p v-else>
-         You are not allowed
-      </p>
-         
-      </p> -->
-
-      <!-- <p v-if="checkUser()">
-         show it
-      </p>
-      <p v-else>
-         You are not allowed
-      </p>
-       -->
-
-       <p v-show="user === 'DEF'">
-          Show it
-       </p>
-       <p v-show="user !== 'DEF'">
-         not show it
+<body>
+    <div id="app">
+        
+       <div id="names" class="container" v-if="state">
+          <h1>Who pays the bill</h1>
+          <div class="input_container">
+             <input type="text" v-model="inputName">
+             <button @click="addNameToList">ADD</button>
           </div>
-   </body>
-      <script>
+          <div class="error_label" v-if="showError">
+                   You must enter a name !!!
+          </div>
+          <div class="list_of_names">
+             <div
+                v-for="(name,index) in names"
+                :key="index"
+             >
+             {{name}}
+          </div>
+       </div>
+       <div v-if="names.length > 1" >
+          <div
+           class="action_button"
+           @click="showResults"
+          >
+             Check the looser
+          </div>
+       </div>
 
+    <div id="result" class="container" v-if="!state">
+    <div class="result_container">
+       <h1>The looser is:</h1>
+       <div class="result_value">{{ result}}</div>
+    </div>
+    </div> 
 
-        new Vue({
-            el:"#app",
-            data:{
-               user:"DEF",
-               userAge:15,
-               allowedAge:18
-               },
-
-            method:{
-               checkUser(){
-                  return this.user ==="ABC" ? true:false
-               }
-            }
-                 
-         })
-      </script>
-
-
+    </div>
+    </div>
+ </body>
+ 
+ <script src="js/main.js"></script>
 </html>
