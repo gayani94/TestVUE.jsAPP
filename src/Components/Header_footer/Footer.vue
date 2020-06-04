@@ -1,14 +1,19 @@
 <template>
-    <footer>
-        Footer
-    </footer>
+    <div>
+        <footer>
+           FIX.com
+        </footer>
+    </div>
 </template>
+
+<script>
+    
+</script>
 
 <style>
     footer {
-        background: #607d8b;
+        background: #607D8B;
         padding: 20px;
-        color:#ffffff;
+        color: #fff;
     }
-
 </style>

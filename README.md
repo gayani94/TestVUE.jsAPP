@@ -1,4 +1,4 @@
-# inter
+# int_one
 
 > A Vue.js project
 
