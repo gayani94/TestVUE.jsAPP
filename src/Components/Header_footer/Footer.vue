@@ -1,7 +1,7 @@
 <template>
     <div>
         <footer>
-           FIX.com
+            Footer
         </footer>
     </div>
 </template>
