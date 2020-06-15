@@ -1,25 +1,22 @@
 import Vue from 'vue';
 import App from './App.vue';
-import VueResource from 'vue-resource';
 
 import Header from './Components/Header_footer/Header.vue'
 import Footer from './Components/Header_footer/Footer.vue';
+import Featured from './Components/Featured/index.vue'
+
+
+import { MdButton,MdDrawer} from 'vue-material/dist/components'
+import 'vue-material/dist/vue-material.min.css'
+import 'vue-material/dist/theme/default.css'
+
+Vue.use(MdButton);
+Vue.use(MdDrawer);
 
 Vue.component('app-header',Header)
 Vue.component('app-footer',Footer)
+Vue.component('app-featured', Featured)
 
-Vue.use(VueResource);
-Vue.http.options.root = 'http://localhost:3004/'
-Vue.http.headers.common['Auhorization'] = 'Basic iudgfjksdbflwefhwdjfk'
-
-Vue.http.interceptors.push((request,next)=>{
-    console.log(request);
-    //request.root = 'http://somethoingelse.com/'
-
-    next( response => {
-        response.body = [...response.body,{hey:'Hello'}]
-    })
-})
 
 
 new Vue({
